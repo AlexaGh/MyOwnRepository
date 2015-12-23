@@ -2,40 +2,38 @@ package com.alexasapps.multiplecardsflippingdemo;
 
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    boolean isBackVisible = false;
 
-    public ImageView[] frontImages;
-    public ImageView[] backImages;
-
+    Button portalForNewActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.first_layout);
 
-        frontImages = new ImageView[]{(ImageView) findViewById(R.id.imgBack1), (ImageView) findViewById(R.id.imgBack2), (ImageView)
-                findViewById(R.id.imgBack3), (ImageView) findViewById(R.id.imgBack4), (ImageView) findViewById(R.id.imgBack5), (ImageView) findViewById(R.id.imgBack6), (ImageView) findViewById(R.id.imgBack7), (ImageView) findViewById(R.id.imgBack8),
-                (ImageView) findViewById(R.id.imgBack9)};
-        backImages = new ImageView[]{(ImageView) findViewById(R.id.imgApples), (ImageView) findViewById(R.id.imgBannana), (ImageView) findViewById(R.id.imgKiwi),
-                (ImageView) findViewById(R.id.imgOrange), (ImageView) findViewById(R.id.imgRaspberry), (ImageView) findViewById(R.id.imgLimes), (ImageView) findViewById(R.id.imgStrawBerry), (ImageView) findViewById(R.id.imgWatermelon), (ImageView) findViewById(R.id.imgLemon)};
+        portalForNewActivity = (Button) findViewById(R.id.button);
 
-        final AnimatorSet setRightOut = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(),
-                R.animator.flip_right_out);
+        portalForNewActivity.setOnClickListener(new View.OnClickListener() {
 
-        final AnimatorSet setLeftIn = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(),
-                R.animator.flight_left_in);
+            @Override
+            public void onClick(View v) {
 
-        for (int i = 0; i < frontImages.length; i++) {
-            final int index = i;
+               // Intent i = new Intent(getApplicationContext(),CardFlipping.class);
+                //startActivity(i);
+                startActivity(new Intent(MainActivity.this, CardFlipping.class));
+            }
+        });
+        /*
 
             frontImages[i].setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -55,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             });
-        }
+        }*/
 
     }
 
