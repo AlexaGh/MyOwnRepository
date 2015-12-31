@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="backDrawables">
+        <item>@drawable/apples</item>
+        <item>@drawable/bannana</item>
+        <item>@drawable/kiwi</item>
+        <item>@drawable/lemon</item>
+        <item>@drawable/apples</item>
+        <item>@drawable/bannana</item>
+        <item>@drawable/kiwi</item>
+        <item>@drawable/lemon</item>
+        <item>@drawable/watermelon</item>
+    </array>
+
+
+</resources>

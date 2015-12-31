@@ -14,16 +14,16 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
 
 
-    Button portalForNewActivity;
+    Button easyLevel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_layout);
 
-        portalForNewActivity = (Button) findViewById(R.id.button);
+        easyLevel = (Button) findViewById(R.id.button);
 
-        portalForNewActivity.setOnClickListener(new View.OnClickListener() {
+        easyLevel.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
