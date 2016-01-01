@@ -13,16 +13,17 @@ import java.util.Random;
 public class Card {
 
     private int id;
-    ImageView frontImage;
-    ImageView backImage;
-    Drawable image;
+    private boolean matched = false;
+    private boolean selected = false;
+    private ImageView frontImage;
+    private ImageView backImage;
 
-    public Drawable getImage() {
-        return image;
+    public boolean isMatched() {
+        return matched;
     }
 
-    public void setImage(Drawable image) {
-        this.image = image;
+    public void setMatched(boolean matched) {
+        this.matched = matched;
     }
 
     public ImageView getFrontImage() {
@@ -50,6 +51,11 @@ public class Card {
         this.backImage = backImage;
     }
 
+    public boolean isSelected() {
+        return selected;
+    }
 
-
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
 }
