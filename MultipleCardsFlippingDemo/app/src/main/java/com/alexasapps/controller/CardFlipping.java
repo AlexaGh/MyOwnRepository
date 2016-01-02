@@ -106,8 +106,21 @@ public abstract class CardFlipping extends Activity {
             doTurn(cards.get(index1));
             doTurn(cards.get(index2));
         }
+        if (this.isGameWon()) {
+
+            Toast toast = Toast.makeText(getApplicationContext(), "YOU WON", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
+    public boolean isGameWon() {
+        for (Card c : this.cards) {
+            if (c.isMatched() == false) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     public void setFrontImagesClickListeners() {
         for (int i = 0; i < cards.size(); i++) {
