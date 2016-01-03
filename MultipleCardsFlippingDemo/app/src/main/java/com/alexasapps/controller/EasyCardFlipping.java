@@ -1,35 +1,29 @@
 package com.alexasapps.controller;
 
-
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.Toast;
-
-import com.alexasapps.multiplecardsflippingdemo.MainActivity;
 import com.alexasapps.multiplecardsflippingdemo.R;
 
 public class EasyCardFlipping extends CardFlipping {
+
+    private static final String SCORE_KEY_TRIES = "EasyScoreTries";
+    private static final String SCORE_KEY_TIME = "EasyScoreTime";
+
+    final int nrOfCards = 12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.easy_layout);
 
-        Resources res = MainActivity.mainContext.getResources();
-        frontImages = new ImageView[12];
-        backImages = new ImageView[12];
-
-        for (int i = 0; i < 12; i++) {
-            int idFrontImage = res.getIdentifier("imgBack" + (i + 1), "id", MainActivity.mainContext.getPackageName());
-            int idBackImage = res.getIdentifier("img" + (i + 1), "id", MainActivity.mainContext.getPackageName());
-
-            frontImages[i] = (ImageView) findViewById(idFrontImage);
-            backImages[i] = (ImageView) findViewById(idBackImage);
-        }
-
+        setImages();
         setCards(frontImages, backImages, "fruit");
         setFrontImagesClickListeners();
 
+        setScoreKeys(SCORE_KEY_TRIES, SCORE_KEY_TIME);
+    }
+
+    @Override
+    int getNumberOfCards() {
+        return nrOfCards;
     }
 }
